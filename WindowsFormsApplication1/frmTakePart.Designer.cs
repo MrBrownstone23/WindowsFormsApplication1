@@ -34,6 +34,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnContinueTake = new System.Windows.Forms.Button();
             this.btnCancelTake = new System.Windows.Forms.Button();
+            this.lblConfirmInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             // 
             this.lblTakeInfo.AutoSize = true;
             this.lblTakeInfo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTakeInfo.Location = new System.Drawing.Point(33, 222);
+            this.lblTakeInfo.Location = new System.Drawing.Point(37, 203);
             this.lblTakeInfo.Name = "lblTakeInfo";
             this.lblTakeInfo.Size = new System.Drawing.Size(869, 32);
             this.lblTakeInfo.TabIndex = 1;
@@ -88,12 +89,24 @@
             this.btnCancelTake.Text = "Cancel / Void";
             this.btnCancelTake.UseVisualStyleBackColor = false;
             // 
+            // lblConfirmInfo
+            // 
+            this.lblConfirmInfo.AutoSize = true;
+            this.lblConfirmInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmInfo.Location = new System.Drawing.Point(163, 252);
+            this.lblConfirmInfo.Name = "lblConfirmInfo";
+            this.lblConfirmInfo.Size = new System.Drawing.Size(617, 19);
+            this.lblConfirmInfo.TabIndex = 5;
+            this.lblConfirmInfo.Text = "Click \"Continue\" to Finalize the Transaction, or \"Cancel\" to Void the transaction" +
+    ".";
+            // 
             // frmTakePart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(951, 617);
+            this.Controls.Add(this.lblConfirmInfo);
             this.Controls.Add(this.btnCancelTake);
             this.Controls.Add(this.btnContinueTake);
             this.Controls.Add(this.pictureBox1);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnContinueTake;
         private System.Windows.Forms.Button btnCancelTake;
+        private System.Windows.Forms.Label lblConfirmInfo;
     }
 }
