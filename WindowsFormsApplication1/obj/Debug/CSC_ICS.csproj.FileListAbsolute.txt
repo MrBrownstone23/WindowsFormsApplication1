@@ -10,3 +10,4 @@ C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\W
 C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmViewdb.resources
 C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMainCSC.resources
 C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTakePart.resources
+C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReturnPart.resources
