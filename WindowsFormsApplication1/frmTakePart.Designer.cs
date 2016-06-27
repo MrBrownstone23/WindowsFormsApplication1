@@ -77,7 +77,7 @@
             this.btnContinueTake.Name = "btnContinueTake";
             this.btnContinueTake.Size = new System.Drawing.Size(185, 62);
             this.btnContinueTake.TabIndex = 3;
-            this.btnContinueTake.Text = "Continue / Take";
+            this.btnContinueTake.Text = "Continue";
             this.btnContinueTake.UseVisualStyleBackColor = false;
             // 
             // btnCancelTake

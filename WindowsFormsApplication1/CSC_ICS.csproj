@@ -64,6 +64,12 @@
     <Compile Include="formViewDB.Designer.cs">
       <DependentUpon>formViewDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReturnPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReturnPart.Designer.cs">
+      <DependentUpon>frmReturnPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTakePart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formViewDB.resx">
       <DependentUpon>formViewDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReturnPart.resx">
+      <DependentUpon>frmReturnPart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTakePart.resx">
       <DependentUpon>frmTakePart.cs</DependentUpon>
