@@ -36,6 +36,8 @@
             this.btnCancelTake = new System.Windows.Forms.Button();
             this.lblConfirmInfo = new System.Windows.Forms.Label();
             this.cboTechName = new System.Windows.Forms.ComboBox();
+            this.cboReason = new System.Windows.Forms.ComboBox();
+            this.tboDestination = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +45,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 280);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 296);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(895, 238);
             this.dataGridView1.TabIndex = 0;
@@ -95,7 +97,7 @@
             // 
             this.lblConfirmInfo.AutoSize = true;
             this.lblConfirmInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmInfo.Location = new System.Drawing.Point(163, 253);
+            this.lblConfirmInfo.Location = new System.Drawing.Point(163, 272);
             this.lblConfirmInfo.Name = "lblConfirmInfo";
             this.lblConfirmInfo.Size = new System.Drawing.Size(617, 19);
             this.lblConfirmInfo.TabIndex = 5;
@@ -106,11 +108,31 @@
             // 
             this.cboTechName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTechName.FormattingEnabled = true;
-            this.cboTechName.Location = new System.Drawing.Point(327, 219);
+            this.cboTechName.Location = new System.Drawing.Point(327, 215);
             this.cboTechName.Name = "cboTechName";
             this.cboTechName.Size = new System.Drawing.Size(255, 24);
             this.cboTechName.TabIndex = 6;
             this.cboTechName.Text = "Select Your Name";
+            // 
+            // cboReason
+            // 
+            this.cboReason.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboReason.FormattingEnabled = true;
+            this.cboReason.Location = new System.Drawing.Point(327, 245);
+            this.cboReason.Name = "cboReason";
+            this.cboReason.Size = new System.Drawing.Size(255, 24);
+            this.cboReason.TabIndex = 7;
+            this.cboReason.Text = "Reason for taking part?";
+            // 
+            // tboDestination
+            // 
+            this.tboDestination.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboDestination.Location = new System.Drawing.Point(601, 231);
+            this.tboDestination.Name = "tboDestination";
+            this.tboDestination.Size = new System.Drawing.Size(240, 22);
+            this.tboDestination.TabIndex = 8;
+            this.tboDestination.Text = "Where is it going? (Please Type)";
+            this.tboDestination.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // frmTakePart
             // 
@@ -118,6 +140,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(951, 617);
+            this.Controls.Add(this.tboDestination);
+            this.Controls.Add(this.cboReason);
             this.Controls.Add(this.lblTakeInfo);
             this.Controls.Add(this.cboTechName);
             this.Controls.Add(this.lblConfirmInfo);
@@ -144,5 +168,7 @@
         private System.Windows.Forms.Button btnCancelTake;
         private System.Windows.Forms.Label lblConfirmInfo;
         private System.Windows.Forms.ComboBox cboTechName;
+        private System.Windows.Forms.ComboBox cboReason;
+        private System.Windows.Forms.TextBox tboDestination;
     }
 }

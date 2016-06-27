@@ -36,6 +36,8 @@
             this.btnContinueReturn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tboDestination = new System.Windows.Forms.TextBox();
+            this.cboReason = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +67,7 @@
             // 
             this.lblConfirmInfo.AutoSize = true;
             this.lblConfirmInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmInfo.Location = new System.Drawing.Point(164, 252);
+            this.lblConfirmInfo.Location = new System.Drawing.Point(164, 274);
             this.lblConfirmInfo.Name = "lblConfirmInfo";
             this.lblConfirmInfo.Size = new System.Drawing.Size(617, 19);
             this.lblConfirmInfo.TabIndex = 12;
@@ -107,10 +109,30 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 279);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 298);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(895, 238);
             this.dataGridView1.TabIndex = 7;
+            // 
+            // tboDestination
+            // 
+            this.tboDestination.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboDestination.Location = new System.Drawing.Point(599, 234);
+            this.tboDestination.Name = "tboDestination";
+            this.tboDestination.Size = new System.Drawing.Size(240, 22);
+            this.tboDestination.TabIndex = 15;
+            this.tboDestination.Text = "Where is it going? (Please Type)";
+            this.tboDestination.TextChanged += new System.EventHandler(this.tboDestination_TextChanged);
+            // 
+            // cboReason
+            // 
+            this.cboReason.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboReason.FormattingEnabled = true;
+            this.cboReason.Location = new System.Drawing.Point(328, 247);
+            this.cboReason.Name = "cboReason";
+            this.cboReason.Size = new System.Drawing.Size(255, 24);
+            this.cboReason.TabIndex = 14;
+            this.cboReason.Text = "Reason for taking part?";
             // 
             // frmReturnPart
             // 
@@ -118,6 +140,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(951, 617);
+            this.Controls.Add(this.tboDestination);
+            this.Controls.Add(this.cboReason);
             this.Controls.Add(this.lblTakeInfo);
             this.Controls.Add(this.cboTechName);
             this.Controls.Add(this.lblConfirmInfo);
@@ -144,5 +168,7 @@
         private System.Windows.Forms.Button btnContinueReturn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox tboDestination;
+        private System.Windows.Forms.ComboBox cboReason;
     }
 }
