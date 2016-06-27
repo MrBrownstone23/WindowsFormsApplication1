@@ -35,6 +35,7 @@
             this.btnContinueTake = new System.Windows.Forms.Button();
             this.btnCancelTake = new System.Windows.Forms.Button();
             this.lblConfirmInfo = new System.Windows.Forms.Label();
+            this.cboTechName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +43,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 274);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 280);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(895, 238);
             this.dataGridView1.TabIndex = 0;
@@ -50,8 +51,9 @@
             // lblTakeInfo
             // 
             this.lblTakeInfo.AutoSize = true;
+            this.lblTakeInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblTakeInfo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTakeInfo.Location = new System.Drawing.Point(37, 203);
+            this.lblTakeInfo.Location = new System.Drawing.Point(36, 181);
             this.lblTakeInfo.Name = "lblTakeInfo";
             this.lblTakeInfo.Size = new System.Drawing.Size(869, 32);
             this.lblTakeInfo.TabIndex = 1;
@@ -61,7 +63,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(322, -10);
+            this.pictureBox1.Location = new System.Drawing.Point(322, -17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 210);
             this.pictureBox1.TabIndex = 2;
@@ -93,12 +95,22 @@
             // 
             this.lblConfirmInfo.AutoSize = true;
             this.lblConfirmInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmInfo.Location = new System.Drawing.Point(163, 252);
+            this.lblConfirmInfo.Location = new System.Drawing.Point(163, 253);
             this.lblConfirmInfo.Name = "lblConfirmInfo";
             this.lblConfirmInfo.Size = new System.Drawing.Size(617, 19);
             this.lblConfirmInfo.TabIndex = 5;
             this.lblConfirmInfo.Text = "Click \"Continue\" to Finalize the Transaction, or \"Cancel\" to Void the transaction" +
     ".";
+            // 
+            // cboTechName
+            // 
+            this.cboTechName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTechName.FormattingEnabled = true;
+            this.cboTechName.Location = new System.Drawing.Point(327, 219);
+            this.cboTechName.Name = "cboTechName";
+            this.cboTechName.Size = new System.Drawing.Size(255, 24);
+            this.cboTechName.TabIndex = 6;
+            this.cboTechName.Text = "Select Your Name";
             // 
             // frmTakePart
             // 
@@ -106,15 +118,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(951, 617);
+            this.Controls.Add(this.lblTakeInfo);
+            this.Controls.Add(this.cboTechName);
             this.Controls.Add(this.lblConfirmInfo);
             this.Controls.Add(this.btnCancelTake);
             this.Controls.Add(this.btnContinueTake);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblTakeInfo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmTakePart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTakePart";
+            this.Text = "Taking Part(s) from Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -130,5 +143,6 @@
         private System.Windows.Forms.Button btnContinueTake;
         private System.Windows.Forms.Button btnCancelTake;
         private System.Windows.Forms.Label lblConfirmInfo;
+        private System.Windows.Forms.ComboBox cboTechName;
     }
 }
