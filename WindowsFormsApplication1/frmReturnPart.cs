@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frmTakePart : Form
+    public partial class frmReturnPart : Form
     {
-        public frmTakePart()
+        public frmReturnPart()
         {
             InitializeComponent();
         }
 
-        private void lblTakeInfo_Click(object sender, EventArgs e)
+        private void btnContinueTake_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void tboDestination_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

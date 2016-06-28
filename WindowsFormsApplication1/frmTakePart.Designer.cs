@@ -34,14 +34,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnContinueTake = new System.Windows.Forms.Button();
             this.btnCancelTake = new System.Windows.Forms.Button();
+            this.lblConfirmInfo = new System.Windows.Forms.Label();
+            this.cboTechName = new System.Windows.Forms.ComboBox();
+            this.cboReasonTake = new System.Windows.Forms.ComboBox();
+            this.tboDestinationTake = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 274);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 296);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(895, 238);
             this.dataGridView1.TabIndex = 0;
@@ -49,8 +55,9 @@
             // lblTakeInfo
             // 
             this.lblTakeInfo.AutoSize = true;
+            this.lblTakeInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblTakeInfo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTakeInfo.Location = new System.Drawing.Point(33, 222);
+            this.lblTakeInfo.Location = new System.Drawing.Point(36, 181);
             this.lblTakeInfo.Name = "lblTakeInfo";
             this.lblTakeInfo.Size = new System.Drawing.Size(869, 32);
             this.lblTakeInfo.TabIndex = 1;
@@ -60,7 +67,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(322, -10);
+            this.pictureBox1.Location = new System.Drawing.Point(322, -17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 210);
             this.pictureBox1.TabIndex = 2;
@@ -74,7 +81,7 @@
             this.btnContinueTake.Name = "btnContinueTake";
             this.btnContinueTake.Size = new System.Drawing.Size(185, 62);
             this.btnContinueTake.TabIndex = 3;
-            this.btnContinueTake.Text = "Continue / Take";
+            this.btnContinueTake.Text = "Continue";
             this.btnContinueTake.UseVisualStyleBackColor = false;
             // 
             // btnCancelTake
@@ -88,22 +95,78 @@
             this.btnCancelTake.Text = "Cancel / Void";
             this.btnCancelTake.UseVisualStyleBackColor = false;
             // 
+            // lblConfirmInfo
+            // 
+            this.lblConfirmInfo.AutoSize = true;
+            this.lblConfirmInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmInfo.Location = new System.Drawing.Point(163, 272);
+            this.lblConfirmInfo.Name = "lblConfirmInfo";
+            this.lblConfirmInfo.Size = new System.Drawing.Size(617, 19);
+            this.lblConfirmInfo.TabIndex = 5;
+            this.lblConfirmInfo.Text = "Click \"Continue\" to Finalize the Transaction, or \"Cancel\" to Void the transaction" +
+    ".";
+            // 
+            // cboTechName
+            // 
+            this.cboTechName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTechName.FormattingEnabled = true;
+            this.cboTechName.Location = new System.Drawing.Point(327, 215);
+            this.cboTechName.Name = "cboTechName";
+            this.cboTechName.Size = new System.Drawing.Size(255, 24);
+            this.cboTechName.TabIndex = 6;
+            this.cboTechName.Text = "Select Your Name";
+            // 
+            // cboReasonTake
+            // 
+            this.cboReasonTake.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboReasonTake.FormattingEnabled = true;
+            this.cboReasonTake.Location = new System.Drawing.Point(327, 245);
+            this.cboReasonTake.Name = "cboReasonTake";
+            this.cboReasonTake.Size = new System.Drawing.Size(255, 24);
+            this.cboReasonTake.TabIndex = 7;
+            this.cboReasonTake.Text = "Reason for taking part?";
+            // 
+            // tboDestinationTake
+            // 
+            this.tboDestinationTake.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboDestinationTake.Location = new System.Drawing.Point(601, 231);
+            this.tboDestinationTake.Name = "tboDestinationTake";
+            this.tboDestinationTake.Size = new System.Drawing.Size(240, 22);
+            this.tboDestinationTake.TabIndex = 8;
+            this.tboDestinationTake.Text = "Where is it going? (Please Type)";
+            this.tboDestinationTake.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(50, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(162, 166);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmTakePart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(951, 617);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.tboDestinationTake);
+            this.Controls.Add(this.cboReasonTake);
+            this.Controls.Add(this.lblTakeInfo);
+            this.Controls.Add(this.cboTechName);
+            this.Controls.Add(this.lblConfirmInfo);
             this.Controls.Add(this.btnCancelTake);
             this.Controls.Add(this.btnContinueTake);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblTakeInfo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmTakePart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTakePart";
+            this.Text = "Taking Part(s) from Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +179,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnContinueTake;
         private System.Windows.Forms.Button btnCancelTake;
+        private System.Windows.Forms.Label lblConfirmInfo;
+        private System.Windows.Forms.ComboBox cboTechName;
+        private System.Windows.Forms.ComboBox cboReasonTake;
+        private System.Windows.Forms.TextBox tboDestinationTake;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
