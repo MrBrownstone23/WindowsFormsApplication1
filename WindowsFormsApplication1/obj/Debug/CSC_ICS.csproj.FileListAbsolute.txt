@@ -11,3 +11,21 @@ C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\W
 C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMainCSC.resources
 C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTakePart.resources
 C:\Users\Joseph\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReturnPart.resources
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\bin\Debug\EntityFramework.dll
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\bin\Debug\EntityFramework.xml
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\CSC_ICS.csprojResolveAssemblyReference.cache
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMainCSC.resources
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmAdmindb.resources
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmViewdb.resources
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReturnPart.resources
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTakePart.resources
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\CSC_ICS.csproj.GenerateResource.Cache
+C:\Users\coryc\Source\Repos\InvCSC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Migrations.FInitialMigration.resources
