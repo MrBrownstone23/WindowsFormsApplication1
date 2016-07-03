@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1.DBContext;
 using WindowsFormsApplication1.EFModels;
+using WindowsFormsApplication1;
 
 namespace WindowsFormsApplication1
 {
@@ -71,6 +72,33 @@ namespace WindowsFormsApplication1
 
         public List<Part> PartList = new List<Part>();
 
+        private void btnContinueTake_Click(object sender, EventArgs e)
+        {
+            var partIDList = new List<int>();            
+            var techID = cboTechName.SelectedValue.ToString();
+            var reason = cboReasonTake.Text;
+            var destination = tboDestinationTake.Text;
+            string partsAddedList = "";
+            
 
+            foreach (DataGridViewRow Datarow in dataGridView1.Rows)
+            {
+                var quickID = Datarow.Cells[0].Value.ToString();
+
+                partIDList.Add((int)quickID.ToInt32());
+            }
+
+            foreach (var partID in partIDList)
+            {
+                HelperMethods.RemovePartFromDB(partID, destination, reason, (int)techID.ToInt32());
+                partsAddedList += $"{partID}, ";
+            }
+            dataGridView1.DataSource = null;
+
+            
+            this.Close();
+
+
+        }
     }
 }

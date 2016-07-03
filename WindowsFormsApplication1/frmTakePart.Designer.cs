@@ -91,6 +91,7 @@
             this.btnContinueTake.TabIndex = 3;
             this.btnContinueTake.Text = "Continue";
             this.btnContinueTake.UseVisualStyleBackColor = false;
+            this.btnContinueTake.Click += new System.EventHandler(this.btnContinueTake_Click);
             // 
             // btnCancelTake
             // 
