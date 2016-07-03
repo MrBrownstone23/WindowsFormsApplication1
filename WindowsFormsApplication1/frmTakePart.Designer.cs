@@ -37,17 +37,19 @@
             this.btnCancelTake = new System.Windows.Forms.Button();
             this.lblConfirmInfo = new System.Windows.Forms.Label();
             this.cboTechName = new System.Windows.Forms.ComboBox();
+            this.techBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSet();
             this.cboReasonTake = new System.Windows.Forms.ComboBox();
             this.tboDestinationTake = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSet();
-            this.techBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.techTableAdapter = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.TechTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.techBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -125,6 +127,16 @@
             this.cboTechName.TabIndex = 6;
             this.cboTechName.ValueMember = "TechID";
             // 
+            // techBindingSource
+            // 
+            this.techBindingSource.DataMember = "Tech";
+            this.techBindingSource.DataSource = this._WindowsFormsApplication1_DBContext_InventoryContextDataSet;
+            // 
+            // _WindowsFormsApplication1_DBContext_InventoryContextDataSet
+            // 
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.DataSetName = "_WindowsFormsApplication1_DBContext_InventoryContextDataSet";
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cboReasonTake
             // 
             this.cboReasonTake.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,19 +166,26 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // _WindowsFormsApplication1_DBContext_InventoryContextDataSet
-            // 
-            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.DataSetName = "_WindowsFormsApplication1_DBContext_InventoryContextDataSet";
-            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // techBindingSource
-            // 
-            this.techBindingSource.DataMember = "Tech";
-            this.techBindingSource.DataSource = this._WindowsFormsApplication1_DBContext_InventoryContextDataSet;
-            // 
             // techTableAdapter
             // 
             this.techTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(422, 581);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(422, 555);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 11;
             // 
             // frmTakePart
             // 
@@ -174,6 +193,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(951, 617);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tboDestinationTake);
             this.Controls.Add(this.cboReasonTake);
@@ -190,9 +211,9 @@
             this.Load += new System.EventHandler(this.frmTakePart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.techBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +234,7 @@
         private _WindowsFormsApplication1_DBContext_InventoryContextDataSet _WindowsFormsApplication1_DBContext_InventoryContextDataSet;
         private System.Windows.Forms.BindingSource techBindingSource;
         private _WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.TechTableAdapter techTableAdapter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
