@@ -31,5 +31,12 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void frmTakePart_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_WindowsFormsApplication1_DBContext_InventoryContextDataSet.Tech' table. You can move, or remove it, as needed.
+            this.techTableAdapter.Fill(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.Tech);
+
+        }
     }
 }

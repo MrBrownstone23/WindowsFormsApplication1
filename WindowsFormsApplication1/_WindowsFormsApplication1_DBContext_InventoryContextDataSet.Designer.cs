@@ -384,6 +384,8 @@ namespace WindowsFormsApplication1 {
             
             private global::System.Data.DataColumn columnQuantity;
             
+            private global::System.Data.DataColumn columnScannedID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PartDataTable() {
@@ -499,6 +501,14 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ScannedIDColumn {
+                get {
+                    return this.columnScannedID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -534,7 +544,7 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PartRow AddPartRow(int TransactionID, int TechID, string Category, string PartNumber, string Location, string SerialNumber, string Description, string Notes, string Quantity) {
+            public PartRow AddPartRow(int TransactionID, int TechID, string Category, string PartNumber, string Location, string SerialNumber, string Description, string Notes, string Quantity, int ScannedID) {
                 PartRow rowPartRow = ((PartRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -546,7 +556,8 @@ namespace WindowsFormsApplication1 {
                         SerialNumber,
                         Description,
                         Notes,
-                        Quantity};
+                        Quantity,
+                        ScannedID};
                 rowPartRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPartRow);
                 return rowPartRow;
@@ -586,6 +597,7 @@ namespace WindowsFormsApplication1 {
                 this.columnDescription = base.Columns["Description"];
                 this.columnNotes = base.Columns["Notes"];
                 this.columnQuantity = base.Columns["Quantity"];
+                this.columnScannedID = base.Columns["ScannedID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -611,6 +623,8 @@ namespace WindowsFormsApplication1 {
                 base.Columns.Add(this.columnNotes);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
+                this.columnScannedID = new global::System.Data.DataColumn("ScannedID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnScannedID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnQuickID}, true));
                 this.columnQuickID.AutoIncrement = true;
@@ -628,6 +642,7 @@ namespace WindowsFormsApplication1 {
                 this.columnDescription.MaxLength = 2147483647;
                 this.columnNotes.MaxLength = 2147483647;
                 this.columnQuantity.MaxLength = 2147483647;
+                this.columnScannedID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -769,6 +784,8 @@ namespace WindowsFormsApplication1 {
             
             private global::System.Data.DataColumn columnLastName;
             
+            private global::System.Data.DataColumn columnFullName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TechDataTable() {
@@ -836,6 +853,14 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FullNameColumn {
+                get {
+                    return this.columnFullName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -871,13 +896,14 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TechRow AddTechRow(int TransactionID, string FirstName, string LastName) {
+            public TechRow AddTechRow(int TransactionID, string FirstName, string LastName, string FullName) {
                 TechRow rowTechRow = ((TechRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         TransactionID,
                         FirstName,
-                        LastName};
+                        LastName,
+                        FullName};
                 rowTechRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTechRow);
                 return rowTechRow;
@@ -911,6 +937,7 @@ namespace WindowsFormsApplication1 {
                 this.columnTransactionID = base.Columns["TransactionID"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
+                this.columnFullName = base.Columns["FullName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -924,6 +951,8 @@ namespace WindowsFormsApplication1 {
                 base.Columns.Add(this.columnFirstName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastName);
+                this.columnFullName = new global::System.Data.DataColumn("FullName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFullName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTechID}, true));
                 this.columnTechID.AutoIncrement = true;
@@ -935,6 +964,7 @@ namespace WindowsFormsApplication1 {
                 this.columnTransactionID.AllowDBNull = false;
                 this.columnFirstName.MaxLength = 2147483647;
                 this.columnLastName.MaxLength = 2147483647;
+                this.columnFullName.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1076,8 +1106,6 @@ namespace WindowsFormsApplication1 {
             
             private global::System.Data.DataColumn columnTransactionType;
             
-            private global::System.Data.DataColumn columnPartNumber;
-            
             private global::System.Data.DataColumn columnQuantity;
             
             private global::System.Data.DataColumn columnDestination;
@@ -1153,14 +1181,6 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PartNumberColumn {
-                get {
-                    return this.columnPartNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn QuantityColumn {
                 get {
                     return this.columnQuantity;
@@ -1228,14 +1248,13 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TransactionRow AddTransactionRow(PartRow _parentPartRowByFK_dbo_Transaction_dbo_Part_QuickID, TechRow _parentTechRowByFK_dbo_Transaction_dbo_Tech_TechID, int TransactionType, string PartNumber, int Quantity, string Destination, string Reason, System.DateTime TimeStamp) {
+            public TransactionRow AddTransactionRow(PartRow _parentPartRowByFK_dbo_Transaction_dbo_Part_QuickID, TechRow _parentTechRowByFK_dbo_Transaction_dbo_Tech_TechID, int TransactionType, int Quantity, string Destination, string Reason, System.DateTime TimeStamp) {
                 TransactionRow rowTransactionRow = ((TransactionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
                         TransactionType,
-                        PartNumber,
                         Quantity,
                         Destination,
                         Reason,
@@ -1279,7 +1298,6 @@ namespace WindowsFormsApplication1 {
                 this.columnQuickID = base.Columns["QuickID"];
                 this.columnTechID = base.Columns["TechID"];
                 this.columnTransactionType = base.Columns["TransactionType"];
-                this.columnPartNumber = base.Columns["PartNumber"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnDestination = base.Columns["Destination"];
                 this.columnReason = base.Columns["Reason"];
@@ -1297,8 +1315,6 @@ namespace WindowsFormsApplication1 {
                 base.Columns.Add(this.columnTechID);
                 this.columnTransactionType = new global::System.Data.DataColumn("TransactionType", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransactionType);
-                this.columnPartNumber = new global::System.Data.DataColumn("PartNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPartNumber);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
                 this.columnDestination = new global::System.Data.DataColumn("Destination", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1317,7 +1333,6 @@ namespace WindowsFormsApplication1 {
                 this.columnTransactionID.Unique = true;
                 this.columnQuickID.AllowDBNull = false;
                 this.columnTechID.AllowDBNull = false;
-                this.columnPartNumber.MaxLength = 2147483647;
                 this.columnQuantity.AllowDBNull = false;
                 this.columnDestination.MaxLength = 2147483647;
                 this.columnReason.MaxLength = 2147483647;
@@ -1608,6 +1623,17 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ScannedID {
+                get {
+                    return ((int)(this[this.tablePart.ScannedIDColumn]));
+                }
+                set {
+                    this[this.tablePart.ScannedIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCategoryNull() {
                 return this.IsNull(this.tablePart.CategoryColumn);
             }
@@ -1772,6 +1798,22 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FullName {
+                get {
+                    try {
+                        return ((string)(this[this.tableTech.FullNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FullName\' in table \'Tech\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTech.FullNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFirstNameNull() {
                 return this.IsNull(this.tableTech.FirstNameColumn);
             }
@@ -1792,6 +1834,18 @@ namespace WindowsFormsApplication1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLastNameNull() {
                 this[this.tableTech.LastNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFullNameNull() {
+                return this.IsNull(this.tableTech.FullNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFullNameNull() {
+                this[this.tableTech.FullNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1866,22 +1920,6 @@ namespace WindowsFormsApplication1 {
                 }
                 set {
                     this[this.tableTransaction.TransactionTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PartNumber {
-                get {
-                    try {
-                        return ((string)(this[this.tableTransaction.PartNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PartNumber\' in table \'Transaction\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTransaction.PartNumberColumn] = value;
                 }
             }
             
@@ -1976,18 +2014,6 @@ namespace WindowsFormsApplication1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTransactionTypeNull() {
                 this[this.tableTransaction.TransactionTypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPartNumberNull() {
-                return this.IsNull(this.tableTransaction.PartNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPartNumberNull() {
-                this[this.tableTransaction.PartNumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2264,19 +2290,22 @@ namespace WindowsFormsApplication1._WindowsFormsApplication1_DBContext_Inventory
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Notes", "Notes");
             tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("ScannedID", "ScannedID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Part] WHERE (([QuickID] = @Original_QuickID) AND ([Transaction" +
-                "ID] = @Original_TransactionID) AND ([TechID] = @Original_TechID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Part] WHERE (([QuickID] = @Original_QuickID) AND ([TransactionID] = " +
+                "@Original_TransactionID) AND ([TechID] = @Original_TechID) AND ([ScannedID] = @O" +
+                "riginal_ScannedID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuickID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuickID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ScannedID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ScannedID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Part] ([TransactionID], [TechID], [Category], [PartNumber], [Location], [SerialNumber], [Description], [Notes], [Quantity]) VALUES (@TransactionID, @TechID, @Category, @PartNumber, @Location, @SerialNumber, @Description, @Notes, @Quantity);
-SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNumber, Description, Notes, Quantity FROM Part WHERE (QuickID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Part] ([TransactionID], [TechID], [Category], [PartNumber], [Location], [SerialNumber], [Description], [Notes], [Quantity], [ScannedID]) VALUES (@TransactionID, @TechID, @Category, @PartNumber, @Location, @SerialNumber, @Description, @Notes, @Quantity, @ScannedID);
+SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNumber, Description, Notes, Quantity, ScannedID FROM Part WHERE (QuickID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2287,10 +2316,11 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Notes", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Notes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ScannedID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ScannedID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Part] SET [TransactionID] = @TransactionID, [TechID] = @TechID, [Category] = @Category, [PartNumber] = @PartNumber, [Location] = @Location, [SerialNumber] = @SerialNumber, [Description] = @Description, [Notes] = @Notes, [Quantity] = @Quantity WHERE (([QuickID] = @Original_QuickID) AND ([TransactionID] = @Original_TransactionID) AND ([TechID] = @Original_TechID));
-SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNumber, Description, Notes, Quantity FROM Part WHERE (QuickID = @QuickID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Part] SET [TransactionID] = @TransactionID, [TechID] = @TechID, [Category] = @Category, [PartNumber] = @PartNumber, [Location] = @Location, [SerialNumber] = @SerialNumber, [Description] = @Description, [Notes] = @Notes, [Quantity] = @Quantity, [ScannedID] = @ScannedID WHERE (([QuickID] = @Original_QuickID) AND ([TransactionID] = @Original_TransactionID) AND ([TechID] = @Original_TechID) AND ([ScannedID] = @Original_ScannedID));
+SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNumber, Description, Notes, Quantity, ScannedID FROM Part WHERE (QuickID = @QuickID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2301,9 +2331,11 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Notes", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Notes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ScannedID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ScannedID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuickID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuickID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ScannedID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ScannedID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuickID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "QuickID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2321,7 +2353,7 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNumb" +
-                "er, Description, Notes, Quantity FROM dbo.Part";
+                "er, Description, Notes, Quantity, ScannedID FROM Part";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2382,10 +2414,11 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_QuickID, int Original_TransactionID, int Original_TechID) {
+        public virtual int Delete(int Original_QuickID, int Original_TransactionID, int Original_TechID, int Original_ScannedID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_QuickID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_TransactionID));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_TechID));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_ScannedID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2406,7 +2439,7 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int TransactionID, int TechID, string Category, string PartNumber, string Location, string SerialNumber, string Description, string Notes, string Quantity) {
+        public virtual int Insert(int TransactionID, int TechID, string Category, string PartNumber, string Location, string SerialNumber, string Description, string Notes, string Quantity, int ScannedID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(TransactionID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TechID));
             if ((Category == null)) {
@@ -2451,6 +2484,7 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Quantity));
             }
+            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(ScannedID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2471,7 +2505,7 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int TransactionID, int TechID, string Category, string PartNumber, string Location, string SerialNumber, string Description, string Notes, string Quantity, int Original_QuickID, int Original_TransactionID, int Original_TechID, int QuickID) {
+        public virtual int Update(int TransactionID, int TechID, string Category, string PartNumber, string Location, string SerialNumber, string Description, string Notes, string Quantity, int ScannedID, int Original_QuickID, int Original_TransactionID, int Original_TechID, int Original_ScannedID, int QuickID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(TransactionID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TechID));
             if ((Category == null)) {
@@ -2516,10 +2550,12 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Quantity));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_QuickID));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_TransactionID));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TechID));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(QuickID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ScannedID));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_QuickID));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TransactionID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_TechID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ScannedID));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(QuickID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2540,8 +2576,8 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int TransactionID, int TechID, string Category, string PartNumber, string Location, string SerialNumber, string Description, string Notes, string Quantity, int Original_QuickID, int Original_TransactionID, int Original_TechID) {
-            return this.Update(TransactionID, TechID, Category, PartNumber, Location, SerialNumber, Description, Notes, Quantity, Original_QuickID, Original_TransactionID, Original_TechID, Original_QuickID);
+        public virtual int Update(int TransactionID, int TechID, string Category, string PartNumber, string Location, string SerialNumber, string Description, string Notes, string Quantity, int ScannedID, int Original_QuickID, int Original_TransactionID, int Original_TechID, int Original_ScannedID) {
+            return this.Update(TransactionID, TechID, Category, PartNumber, Location, SerialNumber, Description, Notes, Quantity, ScannedID, Original_QuickID, Original_TransactionID, Original_TechID, Original_ScannedID, Original_QuickID);
         }
     }
     
@@ -2670,31 +2706,34 @@ SELECT QuickID, TransactionID, TechID, Category, PartNumber, Location, SerialNum
             tableMapping.ColumnMappings.Add("TransactionID", "TransactionID");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
+            tableMapping.ColumnMappings.Add("FullName", "FullName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Tech] WHERE (([TechID] = @Original_TechID) AND ([TransactionID" +
-                "] = @Original_TransactionID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Tech] WHERE (([TechID] = @Original_TechID) AND ([TransactionID] = @O" +
+                "riginal_TransactionID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Tech] ([TransactionID], [FirstName], [LastName]) VALUES (@Tran" +
-                "sactionID, @FirstName, @LastName);\r\nSELECT TechID, TransactionID, FirstName, Las" +
-                "tName FROM Tech WHERE (TechID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Tech] ([TransactionID], [FirstName], [LastName], [FullName]) VALUES " +
+                "(@TransactionID, @FirstName, @LastName, @FullName);\r\nSELECT TechID, TransactionI" +
+                "D, FirstName, LastName, FullName FROM Tech WHERE (TechID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FullName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Tech] SET [TransactionID] = @TransactionID, [FirstName] = @FirstName, [LastName] = @LastName WHERE (([TechID] = @Original_TechID) AND ([TransactionID] = @Original_TransactionID));
-SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @TechID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Tech] SET [TransactionID] = @TransactionID, [FirstName] = @FirstName, [LastName] = @LastName, [FullName] = @FullName WHERE (([TechID] = @Original_TechID) AND ([TransactionID] = @Original_TransactionID));
+SELECT TechID, TransactionID, FirstName, LastName, FullName FROM Tech WHERE (TechID = @TechID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FullName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2713,7 +2752,7 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TechID, TransactionID, FirstName, LastName FROM dbo.Tech";
+            this._commandCollection[0].CommandText = "SELECT TechID, TransactionID, FirstName, LastName, FullName FROM Tech";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2797,7 +2836,7 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int TransactionID, string FirstName, string LastName) {
+        public virtual int Insert(int TransactionID, string FirstName, string LastName, string FullName) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(TransactionID));
             if ((FirstName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2810,6 +2849,12 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(LastName));
+            }
+            if ((FullName == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FullName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2831,7 +2876,7 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int TransactionID, string FirstName, string LastName, int Original_TechID, int Original_TransactionID, int TechID) {
+        public virtual int Update(int TransactionID, string FirstName, string LastName, string FullName, int Original_TechID, int Original_TransactionID, int TechID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(TransactionID));
             if ((FirstName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2845,9 +2890,15 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LastName));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_TechID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_TransactionID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(TechID));
+            if ((FullName == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(FullName));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_TechID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_TransactionID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(TechID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2868,8 +2919,8 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int TransactionID, string FirstName, string LastName, int Original_TechID, int Original_TransactionID) {
-            return this.Update(TransactionID, FirstName, LastName, Original_TechID, Original_TransactionID, Original_TechID);
+        public virtual int Update(int TransactionID, string FirstName, string LastName, string FullName, int Original_TechID, int Original_TransactionID) {
+            return this.Update(TransactionID, FirstName, LastName, FullName, Original_TechID, Original_TransactionID, Original_TechID);
         }
     }
     
@@ -2998,7 +3049,6 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
             tableMapping.ColumnMappings.Add("QuickID", "QuickID");
             tableMapping.ColumnMappings.Add("TechID", "TechID");
             tableMapping.ColumnMappings.Add("TransactionType", "TransactionType");
-            tableMapping.ColumnMappings.Add("PartNumber", "PartNumber");
             tableMapping.ColumnMappings.Add("Quantity", "Quantity");
             tableMapping.ColumnMappings.Add("Destination", "Destination");
             tableMapping.ColumnMappings.Add("Reason", "Reason");
@@ -3006,7 +3056,7 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Transaction] WHERE (([TransactionID] = @Original_TransactionID) AND ([QuickID] = @Original_QuickID) AND ([TechID] = @Original_TechID) AND ((@IsNull_TransactionType = 1 AND [TransactionType] IS NULL) OR ([TransactionType] = @Original_TransactionType)) AND ([Quantity] = @Original_Quantity) AND ((@IsNull_TimeStamp = 1 AND [TimeStamp] IS NULL) OR ([TimeStamp] = @Original_TimeStamp)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Transaction] WHERE (([TransactionID] = @Original_TransactionID) AND ([QuickID] = @Original_QuickID) AND ([TechID] = @Original_TechID) AND ((@IsNull_TransactionType = 1 AND [TransactionType] IS NULL) OR ([TransactionType] = @Original_TransactionType)) AND ([Quantity] = @Original_Quantity) AND ((@IsNull_TimeStamp = 1 AND [TimeStamp] IS NULL) OR ([TimeStamp] = @Original_TimeStamp)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuickID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuickID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3018,26 +3068,24 @@ SELECT TechID, TransactionID, FirstName, LastName FROM Tech WHERE (TechID = @Tec
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TimeStamp", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TimeStamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Transaction] ([QuickID], [TechID], [TransactionType], [PartNumber], [Quantity], [Destination], [Reason], [TimeStamp]) VALUES (@QuickID, @TechID, @TransactionType, @PartNumber, @Quantity, @Destination, @Reason, @TimeStamp);
-SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, Destination, Reason, TimeStamp FROM [Transaction] WHERE (TransactionID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Transaction] ([QuickID], [TechID], [TransactionType], [Quantity], [Destination], [Reason], [TimeStamp]) VALUES (@QuickID, @TechID, @TransactionType, @Quantity, @Destination, @Reason, @TimeStamp);
+SELECT TransactionID, QuickID, TechID, TransactionType, Quantity, Destination, Reason, TimeStamp FROM [Transaction] WHERE (TransactionID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuickID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuickID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TimeStamp", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TimeStamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Transaction] SET [QuickID] = @QuickID, [TechID] = @TechID, [TransactionType] = @TransactionType, [PartNumber] = @PartNumber, [Quantity] = @Quantity, [Destination] = @Destination, [Reason] = @Reason, [TimeStamp] = @TimeStamp WHERE (([TransactionID] = @Original_TransactionID) AND ([QuickID] = @Original_QuickID) AND ([TechID] = @Original_TechID) AND ((@IsNull_TransactionType = 1 AND [TransactionType] IS NULL) OR ([TransactionType] = @Original_TransactionType)) AND ([Quantity] = @Original_Quantity) AND ((@IsNull_TimeStamp = 1 AND [TimeStamp] IS NULL) OR ([TimeStamp] = @Original_TimeStamp)));
-SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, Destination, Reason, TimeStamp FROM [Transaction] WHERE (TransactionID = @TransactionID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Transaction] SET [QuickID] = @QuickID, [TechID] = @TechID, [TransactionType] = @TransactionType, [Quantity] = @Quantity, [Destination] = @Destination, [Reason] = @Reason, [TimeStamp] = @TimeStamp WHERE (([TransactionID] = @Original_TransactionID) AND ([QuickID] = @Original_QuickID) AND ([TechID] = @Original_TechID) AND ((@IsNull_TransactionType = 1 AND [TransactionType] IS NULL) OR ([TransactionType] = @Original_TransactionType)) AND ([Quantity] = @Original_Quantity) AND ((@IsNull_TimeStamp = 1 AND [TimeStamp] IS NULL) OR ([TimeStamp] = @Original_TimeStamp)));
+SELECT TransactionID, QuickID, TechID, TransactionType, Quantity, Destination, Reason, TimeStamp FROM [Transaction] WHERE (TransactionID = @TransactionID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuickID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuickID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PartNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3066,8 +3114,8 @@ SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, De
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, Des" +
-                "tination, Reason, TimeStamp FROM dbo.[Transaction]";
+            this._commandCollection[0].CommandText = "SELECT TransactionID, QuickID, TechID, TransactionType, Quantity, Destination, Re" +
+                "ason, TimeStamp FROM [Transaction]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3169,7 +3217,7 @@ SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, De
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int QuickID, int TechID, global::System.Nullable<int> TransactionType, string PartNumber, int Quantity, string Destination, string Reason, global::System.Nullable<global::System.DateTime> TimeStamp) {
+        public virtual int Insert(int QuickID, int TechID, global::System.Nullable<int> TransactionType, int Quantity, string Destination, string Reason, global::System.Nullable<global::System.DateTime> TimeStamp) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(QuickID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TechID));
             if ((TransactionType.HasValue == true)) {
@@ -3178,30 +3226,24 @@ SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, De
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((PartNumber == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Quantity));
+            if ((Destination == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PartNumber));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Destination));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Quantity));
-            if ((Destination == null)) {
+            if ((Reason == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Destination));
-            }
-            if ((Reason == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Reason));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Reason));
             }
             if ((TimeStamp.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(TimeStamp.Value));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(TimeStamp.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3223,7 +3265,7 @@ SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, De
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int QuickID, int TechID, global::System.Nullable<int> TransactionType, string PartNumber, int Quantity, string Destination, string Reason, global::System.Nullable<global::System.DateTime> TimeStamp, int Original_TransactionID, int Original_QuickID, int Original_TechID, global::System.Nullable<int> Original_TransactionType, int Original_Quantity, global::System.Nullable<global::System.DateTime> Original_TimeStamp, int TransactionID) {
+        public virtual int Update(int QuickID, int TechID, global::System.Nullable<int> TransactionType, int Quantity, string Destination, string Reason, global::System.Nullable<global::System.DateTime> TimeStamp, int Original_TransactionID, int Original_QuickID, int Original_TechID, global::System.Nullable<int> Original_TransactionType, int Original_Quantity, global::System.Nullable<global::System.DateTime> Original_TimeStamp, int TransactionID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(QuickID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TechID));
             if ((TransactionType.HasValue == true)) {
@@ -3232,52 +3274,46 @@ SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, De
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((PartNumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Quantity));
+            if ((Destination == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PartNumber));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Destination));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Quantity));
-            if ((Destination == null)) {
+            if ((Reason == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Destination));
-            }
-            if ((Reason == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Reason));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Reason));
             }
             if ((TimeStamp.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(TimeStamp.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(TimeStamp.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_TransactionID));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_QuickID));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_TechID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_TransactionID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_QuickID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_TechID));
             if ((Original_TransactionType.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_TransactionType.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TransactionType.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Quantity));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Quantity));
             if ((Original_TimeStamp.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_TimeStamp.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_TimeStamp.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(TransactionID));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(TransactionID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3298,8 +3334,8 @@ SELECT TransactionID, QuickID, TechID, TransactionType, PartNumber, Quantity, De
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int QuickID, int TechID, global::System.Nullable<int> TransactionType, string PartNumber, int Quantity, string Destination, string Reason, global::System.Nullable<global::System.DateTime> TimeStamp, int Original_TransactionID, int Original_QuickID, int Original_TechID, global::System.Nullable<int> Original_TransactionType, int Original_Quantity, global::System.Nullable<global::System.DateTime> Original_TimeStamp) {
-            return this.Update(QuickID, TechID, TransactionType, PartNumber, Quantity, Destination, Reason, TimeStamp, Original_TransactionID, Original_QuickID, Original_TechID, Original_TransactionType, Original_Quantity, Original_TimeStamp, Original_TransactionID);
+        public virtual int Update(int QuickID, int TechID, global::System.Nullable<int> TransactionType, int Quantity, string Destination, string Reason, global::System.Nullable<global::System.DateTime> TimeStamp, int Original_TransactionID, int Original_QuickID, int Original_TechID, global::System.Nullable<int> Original_TransactionType, int Original_Quantity, global::System.Nullable<global::System.DateTime> Original_TimeStamp) {
+            return this.Update(QuickID, TechID, TransactionType, Quantity, Destination, Reason, TimeStamp, Original_TransactionID, Original_QuickID, Original_TechID, Original_TransactionType, Original_Quantity, Original_TimeStamp, Original_TransactionID);
         }
     }
     

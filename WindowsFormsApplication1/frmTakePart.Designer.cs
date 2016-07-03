@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTakePart));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTakeInfo = new System.Windows.Forms.Label();
@@ -39,9 +40,14 @@
             this.cboReasonTake = new System.Windows.Forms.ComboBox();
             this.tboDestinationTake = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSet();
+            this.techBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.techTableAdapter = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.TechTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -108,13 +114,16 @@
             // 
             // cboTechName
             // 
+            this.cboTechName.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.techBindingSource, "TechID", true));
+            this.cboTechName.DataSource = this.techBindingSource;
+            this.cboTechName.DisplayMember = "FullName";
             this.cboTechName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTechName.FormattingEnabled = true;
             this.cboTechName.Location = new System.Drawing.Point(327, 215);
             this.cboTechName.Name = "cboTechName";
             this.cboTechName.Size = new System.Drawing.Size(255, 24);
             this.cboTechName.TabIndex = 6;
-            this.cboTechName.Text = "Select Your Name";
+            this.cboTechName.ValueMember = "TechID";
             // 
             // cboReasonTake
             // 
@@ -145,6 +154,20 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
+            // _WindowsFormsApplication1_DBContext_InventoryContextDataSet
+            // 
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.DataSetName = "_WindowsFormsApplication1_DBContext_InventoryContextDataSet";
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // techBindingSource
+            // 
+            this.techBindingSource.DataMember = "Tech";
+            this.techBindingSource.DataSource = this._WindowsFormsApplication1_DBContext_InventoryContextDataSet;
+            // 
+            // techTableAdapter
+            // 
+            this.techTableAdapter.ClearBeforeFill = true;
+            // 
             // frmTakePart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,9 +187,12 @@
             this.Name = "frmTakePart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Taking Part(s) from Inventory";
+            this.Load += new System.EventHandler(this.frmTakePart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +210,8 @@
         private System.Windows.Forms.ComboBox cboReasonTake;
         private System.Windows.Forms.TextBox tboDestinationTake;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private _WindowsFormsApplication1_DBContext_InventoryContextDataSet _WindowsFormsApplication1_DBContext_InventoryContextDataSet;
+        private System.Windows.Forms.BindingSource techBindingSource;
+        private _WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.TechTableAdapter techTableAdapter;
     }
 }
