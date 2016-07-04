@@ -39,9 +39,13 @@
             this.btnTransactions = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.partTableAdapter = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.PartTableAdapter();
+            this.cboTech = new System.Windows.Forms.ComboBox();
+            this.techBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.techTableAdapter = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.TechTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -126,6 +130,7 @@
             this.btnTransactions.TabIndex = 5;
             this.btnTransactions.Text = "Transactions";
             this.btnTransactions.UseVisualStyleBackColor = false;
+            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
             // 
             // textBox1
             // 
@@ -140,12 +145,36 @@
             // 
             this.partTableAdapter.ClearBeforeFill = true;
             // 
+            // cboTech
+            // 
+            this.cboTech.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.techBindingSource, "TechID", true));
+            this.cboTech.DataSource = this.techBindingSource;
+            this.cboTech.DisplayMember = "FullName";
+            this.cboTech.FormattingEnabled = true;
+            this.cboTech.Location = new System.Drawing.Point(707, 109);
+            this.cboTech.Name = "cboTech";
+            this.cboTech.Size = new System.Drawing.Size(206, 21);
+            this.cboTech.TabIndex = 7;
+            this.cboTech.ValueMember = "TechID";
+            this.cboTech.Visible = false;
+            this.cboTech.SelectedIndexChanged += new System.EventHandler(this.cboTech_SelectedIndexChanged);
+            // 
+            // techBindingSource
+            // 
+            this.techBindingSource.DataMember = "Tech";
+            this.techBindingSource.DataSource = this._WindowsFormsApplication1_DBContext_InventoryContextDataSet;
+            // 
+            // techTableAdapter
+            // 
+            this.techTableAdapter.ClearBeforeFill = true;
+            // 
             // frmViewdb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(951, 617);
+            this.Controls.Add(this.cboTech);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnTransactions);
             this.Controls.Add(this.btnEntireStock);
@@ -161,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +208,8 @@
         private _WindowsFormsApplication1_DBContext_InventoryContextDataSet _WindowsFormsApplication1_DBContext_InventoryContextDataSet;
         private System.Windows.Forms.BindingSource partBindingSource;
         private _WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.PartTableAdapter partTableAdapter;
+        private System.Windows.Forms.ComboBox cboTech;
+        private System.Windows.Forms.BindingSource techBindingSource;
+        private _WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.TechTableAdapter techTableAdapter;
     }
 }
