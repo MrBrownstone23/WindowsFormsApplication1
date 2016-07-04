@@ -26,6 +26,8 @@ namespace WindowsFormsApplication1.EFModels
 
         public string LastName { get; set; }
 
+        public string FullName { get; set; }
+
         public virtual ICollection<Transaction>  Transaction { get; set; }
 
     }

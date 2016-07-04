@@ -20,6 +20,8 @@ namespace WindowsFormsApplication1.EFModels
         [Key]
         public int QuickID { get; set; }
 
+        public int ScannedID { get; set; }
+
         public int TransactionID { get; set; }
 
         public int TechID { get; set; }

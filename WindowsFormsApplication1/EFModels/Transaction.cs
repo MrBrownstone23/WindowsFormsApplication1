@@ -23,9 +23,7 @@ namespace WindowsFormsApplication1.EFModels
         public int TechID { get; set; }
 
         public EnumTransactionType? TransactionType { get; set; }
-
-        public string PartNumber { get; set; }
-
+        
         public int Quantity { get; set; }
 
         public string Destination { get; set; }
