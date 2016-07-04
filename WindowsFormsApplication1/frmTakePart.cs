@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsFormsApplication1.DBContext;
 using WindowsFormsApplication1.EFModels;
 using WindowsFormsApplication1;
+using static WindowsFormsApplication1.Enums;
 
 namespace WindowsFormsApplication1
 {
@@ -18,6 +19,9 @@ namespace WindowsFormsApplication1
         public frmTakePart()
         {
             InitializeComponent();
+
+            cboReasonTake.DataSource = Enum.GetValues(typeof(EnumReason));
+            
         }
 
         private void lblTakeInfo_Click(object sender, EventArgs e)
@@ -99,6 +103,11 @@ namespace WindowsFormsApplication1
             this.Close();
 
 
+        }
+
+        private void btnCancelTake_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

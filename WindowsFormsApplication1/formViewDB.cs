@@ -19,8 +19,7 @@ namespace WindowsFormsApplication1
 
         private void frmViewdb_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_WindowsFormsApplication1_DBContext_InventoryContextDataSet.Part' table. You can move, or remove it, as needed.
-            this.partTableAdapter.Fill(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.Part);
+            HelperMethods.GetPartsGrid(dataGridView1);
 
         }
     }

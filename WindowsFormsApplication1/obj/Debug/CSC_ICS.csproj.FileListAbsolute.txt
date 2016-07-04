@@ -38,7 +38,6 @@ C:\Users\coryc\Source\Repos\InvNew\WindowsFormsApplication1\bin\Debug\EntityFram
 C:\Users\coryc\Source\Repos\InvNew\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\coryc\Source\Repos\InvNew\WindowsFormsApplication1\bin\Debug\EntityFramework.xml
 C:\Users\coryc\Source\Repos\InvNew\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\coryc\Source\Repos\InvNew\WindowsFormsApplication1\obj\Debug\CSC_ICS.csprojResolveAssemblyReference.cache
 C:\Users\coryc\Source\Repos\InvNew\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMainCSC.resources
 C:\Users\coryc\Source\Repos\InvNew\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmAdmindb.resources
 C:\Users\coryc\Source\Repos\InvNew\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmViewdb.resources

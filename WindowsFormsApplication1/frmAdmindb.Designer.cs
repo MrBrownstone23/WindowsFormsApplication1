@@ -35,26 +35,16 @@
             this.btnIdNumber = new System.Windows.Forms.Button();
             this.btnSerialNumber = new System.Windows.Forms.Button();
             this.btnPartNumber = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgdAdmin = new System.Windows.Forms.DataGridView();
+            this.partBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSet();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSet();
-            this.partBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.partTableAdapter = new WindowsFormsApplication1._WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.PartTableAdapter();
-            this.quickIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.techIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -126,26 +116,23 @@
             this.btnPartNumber.Text = "Part Number";
             this.btnPartNumber.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgdAdmin
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.quickIDDataGridViewTextBoxColumn,
-            this.partNumberDataGridViewTextBoxColumn,
-            this.serialNumberDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.locationDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.categoryDataGridViewTextBoxColumn,
-            this.notesDataGridViewTextBoxColumn,
-            this.transactionIDDataGridViewTextBoxColumn,
-            this.techIDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.partBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 121);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(801, 484);
-            this.dataGridView1.TabIndex = 7;
+            this.dgdAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdAdmin.Location = new System.Drawing.Point(34, 121);
+            this.dgdAdmin.Name = "dgdAdmin";
+            this.dgdAdmin.Size = new System.Drawing.Size(801, 484);
+            this.dgdAdmin.TabIndex = 7;
+            // 
+            // partBindingSource
+            // 
+            this.partBindingSource.DataMember = "Part";
+            this.partBindingSource.DataSource = this._WindowsFormsApplication1_DBContext_InventoryContextDataSet;
+            // 
+            // _WindowsFormsApplication1_DBContext_InventoryContextDataSet
+            // 
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.DataSetName = "_WindowsFormsApplication1_DBContext_InventoryContextDataSet";
+            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnDelete
             // 
@@ -180,80 +167,9 @@
             this.btnAdd.Text = "+Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // _WindowsFormsApplication1_DBContext_InventoryContextDataSet
-            // 
-            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.DataSetName = "_WindowsFormsApplication1_DBContext_InventoryContextDataSet";
-            this._WindowsFormsApplication1_DBContext_InventoryContextDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // partBindingSource
-            // 
-            this.partBindingSource.DataMember = "Part";
-            this.partBindingSource.DataSource = this._WindowsFormsApplication1_DBContext_InventoryContextDataSet;
-            // 
             // partTableAdapter
             // 
             this.partTableAdapter.ClearBeforeFill = true;
-            // 
-            // quickIDDataGridViewTextBoxColumn
-            // 
-            this.quickIDDataGridViewTextBoxColumn.DataPropertyName = "QuickID";
-            this.quickIDDataGridViewTextBoxColumn.HeaderText = "QuickID";
-            this.quickIDDataGridViewTextBoxColumn.Name = "quickIDDataGridViewTextBoxColumn";
-            this.quickIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // partNumberDataGridViewTextBoxColumn
-            // 
-            this.partNumberDataGridViewTextBoxColumn.DataPropertyName = "PartNumber";
-            this.partNumberDataGridViewTextBoxColumn.HeaderText = "PartNumber";
-            this.partNumberDataGridViewTextBoxColumn.Name = "partNumberDataGridViewTextBoxColumn";
-            // 
-            // serialNumberDataGridViewTextBoxColumn
-            // 
-            this.serialNumberDataGridViewTextBoxColumn.DataPropertyName = "SerialNumber";
-            this.serialNumberDataGridViewTextBoxColumn.HeaderText = "SerialNumber";
-            this.serialNumberDataGridViewTextBoxColumn.Name = "serialNumberDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            // 
-            // notesDataGridViewTextBoxColumn
-            // 
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
-            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            // 
-            // transactionIDDataGridViewTextBoxColumn
-            // 
-            this.transactionIDDataGridViewTextBoxColumn.DataPropertyName = "TransactionID";
-            this.transactionIDDataGridViewTextBoxColumn.HeaderText = "TransactionID";
-            this.transactionIDDataGridViewTextBoxColumn.Name = "transactionIDDataGridViewTextBoxColumn";
-            // 
-            // techIDDataGridViewTextBoxColumn
-            // 
-            this.techIDDataGridViewTextBoxColumn.DataPropertyName = "TechID";
-            this.techIDDataGridViewTextBoxColumn.HeaderText = "TechID";
-            this.techIDDataGridViewTextBoxColumn.Name = "techIDDataGridViewTextBoxColumn";
             // 
             // frmAdmindb
             // 
@@ -270,14 +186,14 @@
             this.Controls.Add(this.btnIdNumber);
             this.Controls.Add(this.btnSerialNumber);
             this.Controls.Add(this.btnPartNumber);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgdAdmin);
             this.Name = "frmAdmindb";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Database Managment";
             this.Load += new System.EventHandler(this.frmAdmindb_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._WindowsFormsApplication1_DBContext_InventoryContextDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,22 +207,12 @@
         private System.Windows.Forms.Button btnIdNumber;
         private System.Windows.Forms.Button btnSerialNumber;
         private System.Windows.Forms.Button btnPartNumber;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgdAdmin;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private _WindowsFormsApplication1_DBContext_InventoryContextDataSet _WindowsFormsApplication1_DBContext_InventoryContextDataSet;
         private System.Windows.Forms.BindingSource partBindingSource;
         private _WindowsFormsApplication1_DBContext_InventoryContextDataSetTableAdapters.PartTableAdapter partTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quickIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn partNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serialNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn transactionIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn techIDDataGridViewTextBoxColumn;
     }
 }

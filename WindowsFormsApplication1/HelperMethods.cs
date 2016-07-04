@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1.DBContext;
 using WindowsFormsApplication1.EFModels;
+using static WindowsFormsApplication1.Enums;
 
 namespace WindowsFormsApplication1
 {
@@ -31,12 +32,11 @@ namespace WindowsFormsApplication1
                     transaction.Quantity = -1;
                     transaction.Destination = destination;
                     transaction.TechID = techID;
-                    transaction.TransactionType = 0;
+                    transaction.TransactionType = EnumTransactionType.Take;
                     transaction.Reason = reason;
                     transaction.TimeStamp = DateTime.Now;
 
                     context.Transaction.Add(transaction);
-
 
                     partToUpdate.TransactionID = transaction.TransactionID;
                     var quantity = partToUpdate.Quantity.ToInt32();
@@ -48,11 +48,32 @@ namespace WindowsFormsApplication1
                     entry.Property(e => e.Quantity).IsModified = true;
                     entry.Property(e => e.TransactionID).IsModified = true;
 
-
                     context.SaveChanges();
                 }
             }
 
+        }
+
+        public static void GetPartsGrid(DataGridView dataGridView)
+        {
+            using (var context = new InventoryContext())
+            {
+                var parts = context.Part.Select(x => x).ToList();
+
+                var grid = parts.Select(x => new
+                {
+                    QuickID = x.QuickID,
+                    PartNumber = x.PartNumber,
+                    Description = x.Description,
+                    SerialNumber = x.SerialNumber,
+                    Category = x.Category,
+                    Location = x.Location,
+                    Quantity = x.Quantity
+                }).OrderBy(x=> x.PartNumber).ToList();
+
+                dataGridView.DataSource = grid;
+                
+            }
         }
 
 

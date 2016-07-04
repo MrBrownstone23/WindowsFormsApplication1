@@ -103,6 +103,7 @@
             this.btnCancelTake.TabIndex = 4;
             this.btnCancelTake.Text = "Cancel / Void";
             this.btnCancelTake.UseVisualStyleBackColor = false;
+            this.btnCancelTake.Click += new System.EventHandler(this.btnCancelTake_Click);
             // 
             // lblConfirmInfo
             // 
